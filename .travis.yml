@@ -16,3 +16,6 @@ env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 sudo: false
+
+notifications:
+  slack: sockdrawer:Io6ltoC12TtuMZIT4ZgiTCfn
