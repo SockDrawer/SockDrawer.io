@@ -1,0 +1,23 @@
+language: ruby
+rvm:
+- 2.1
+branches:
+  only:
+  - master
+  
+before_script:
+- chmod +x ./script/cibuild
+- chmod +x ./script/deploy
+- chmod 600 id_rsa
+install:
+  - gem install jekyll image_optim image_optim_pack
+  - gem install html-proofer -v 3.0.0
+script: "./script/cibuild"
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+sudo: false
+before_install:
+- openssl aes-256-cbc -K $encrypted_26b4962af0e7_key -iv $encrypted_26b4962af0e7_iv
+  -in id_rsa.enc -out id_rsa -d
+after_success: "./script/deploy"
