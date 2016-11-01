@@ -13,7 +13,7 @@ For today sees the release of
 
 #SockBot v2.11.<del>2</del><ins>3</ins> 'Cheery Chiffon'
 
-[Documentation](https://sockbot-math.readthedocs.org/en/v2.11.2/)
+[Documentation](https://sockbot.readthedocs.org/en/v2.11.2/)
 [Issue Tracker](https://github.com/SockDrawer/SockBot/issues)
 
 ---
