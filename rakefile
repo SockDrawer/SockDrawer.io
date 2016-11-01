@@ -8,5 +8,6 @@ task :build do
 end
 
 task :test do
-    HTMLProofer.check_directory("./_site").run
+    opts = { :check_html => true, :internal_domains => ['www.sockdrawer.io']}
+    HTMLProofer.check_directory("./_site", opts).run
 end
