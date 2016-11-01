@@ -1,21 +1,25 @@
 language: ruby
 rvm:
-  - 2.2.2
-  
+- 2.2.2
 branches:
   only:
   - master
-  
 install:
-  - bundle install
+- bundle install
 before_script:
-  - rake build
-script: 
-  - rake test
+- rake build
+script:
+- rake test
+after_success:
+- chmod 600 deploy-key
+- mv deploy-key ~/.ssh/id_rsa
+- rake deploy
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 sudo: false
-
 notifications:
   slack: sockdrawer:Io6ltoC12TtuMZIT4ZgiTCfn
+before_install:
+- openssl aes-256-cbc -K $encrypted_59895de940bb_key -iv $encrypted_59895de940bb_iv
+  -in deploy_key.enc -out deploy_key -d
