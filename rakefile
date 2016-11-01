@@ -1,0 +1,12 @@
+require 'html-proofer'
+
+task :build do
+  puts "building site"
+  sh "bundle exec jekyll build"
+  puts "Compressing images... Grab a coffee"
+  sh "image_optim images/* --no-pngout --no-svgo"
+end
+
+task :test do
+    HTMLProofer.check_directory("./_site").run
+end

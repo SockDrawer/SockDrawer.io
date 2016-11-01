@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'jekyll'
+gem 'image_optim'
+gem 'image_optim_pack'
+gem 'rake'
+gem 'html-proofer', '~> 3.0.0'
