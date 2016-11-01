@@ -7,7 +7,7 @@
 (function($) {
 
 	skel.init({
-		reset: 'full',
+		reset: 'none',
 		breakpoints: {
 			global:		{ range: '*', href: '/css/style.css', containers: 1400, grid: { gutters: 50 } },
 			wide:		{ range: '-1680', href: '/css/style-wide.css', containers: 1200, grid: { gutters: 40 } },

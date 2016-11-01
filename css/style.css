@@ -51,7 +51,7 @@
 		}
 
 	strong, b {
-		font-weight: 400;
+		font-weight: 600;
 	}
 
 	p, ul, ol, dl, table, blockquote {
@@ -71,6 +71,11 @@
 			text-decoration: none;
 			border: 0;
 		}
+		
+	h1 {
+		font-size: 2em;
+		letter-spacing: 0.1em;
+	}
 
 	h2 {
 		font-size: 1.5em;

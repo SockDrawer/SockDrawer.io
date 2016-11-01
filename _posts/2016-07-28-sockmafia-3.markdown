@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "Sockmafia 3.1: The Night Release"
+date:   2016-07-28 13:10:47
+permalink: /sockmafia-3.1.html
+author: Yamikuronue
+---
+ 
+SockMafia 3.1 adds a number of new features to help handle the bookkeeping inherent in the Night phase of the game. Players can now submit their night actions in an official, automated way, and you can retrieve the list of actions at any time without needing to check a half dozen separate night threads. 
+
+## Multi-thread games
+**Feature: Add threads and chats to a game**
+
+- The mod may, at any time, add a thread to the game using the command `!add thread [identifier] to [gameName]`
+- The mod may, at any time, add a chat to the game using the command `!add chat [identifier] to [gameName]`
+- In said thread, the mod can use `!add this to [gameName]` to add the current thread or chat to the game
+
+## Night Actions!
+
+**Feature: Target command**
+
+- Any player may use the `!target` command during the night phase in any approved game thread. 
+- The mod may, at any time, request a summation of the target commands by using the command `!list-night-actions`.
+
+## New player types
+
+**Feature: Doublevoter**
+
+- Doublevoters are now back in the game, after having been removed to meet an earlier deadline on a previous release.
+- To create a doublevoter, the mod can use `!set [player] doublevoter in [gameName]` (or see the complete `set` syntax for more options)
+- A doublevoter can vote once using the `for` command and once using the `vote` command. 
+- A doublevoter can rescind a specific vote using `!unvote [playername]` or unvote all votes using `!unvote`
+
+**Feature: Lynchproof**
+
+- Lynchproof is a new role that cannot be lynched. 
+- To create a lynchproof player, the mod can use `!set [player] lynchproof in [gameName]` (or see the complete `set` syntax for more options)
+- Lynchproof players will not die when lynched. There is no special message; they just remain unlynched and the day does not advance.
+
+**Feature: Groups**
+
+- The mod can now designate people as belonging to one of two groups: `scum` or `scum2`. 
+- If a scum person registers a `target` action, it will undo any previous `target` attempts made by other members of that particular scum group. 
+
+## General UX enhancements
+**Feature: command aliases**
+
+- Player commands with a hyphen can now be used unhypenated. For example, `!listvotes` is an alias for `!list-votes`
+- `!vote for [playername]` now works the same as `!vote [playername]`
+
+**Feature: Phase vs Day**
+
+- The command `new-day` is no longer an alias for `next-phase`. Instead, it moves to the top of the next day, regardless of what phase it currently is
+
+**Fix: Better error reporting**
+
+- When too few arguments are given in mod and player commands, the command is now more likely to explain the usage.
+- Some error messages have been standardized for a more consistant message

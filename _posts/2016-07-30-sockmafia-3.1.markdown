@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Sockmafia 3.1.1: Sockmafia for Workgroups"
+date:   2016-07-28 13:10:47
+permalink: /sockmafia-3.1.html
+author: Yamikuronue
+---
+ 
+Of course, two days after our last version, we've had to release a patch :) 
+
+In this version:
+
+**Documentation!**
+
+- Added a New Players Guide
+- Added a Moderator's Guide
+- A little extra JSDoc while I'm at it
+
+**Bugfixes**
+
+- Number required to lynch was incorrect when starting a new day.

@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "Announcing Sockmafia 2.0"
+date:   2016-05-01 10:46:24
+permalink: /sockmafia-2.0.html
+author: Yamikuronue
+---
+
+Announcing: SockMafia 2.0!
+[https://www.npmjs.com/package/sockmafia](https://www.npmjs.com/package/sockmafia)
+
+
+## FAQ
+
+### What happened to 1.0? 
+It's on Github, but we never released it to NPM
+
+### How do I install this?
+Now that we're on NPM, the easiest way to get a bot running is with the following simple steps:
+
+1. `npm install -g sockbot`
+2. `npm install -g sockmafia`
+3. Create a `config.yml` file using the below template:
+
+
+```yaml
+---
+core:
+  username: mafiabot
+  password: mafiapassword
+  owner: ownerAccount
+plugins:
+  'sockmafia':
+    thread: 52778
+    mods:
+     - mod
+    players:
+     - player1
+     - player2
+    db: './mafiadb'
+    name: testMafia
+    voteBars: bastard
+```
+
+
+4. run `sockbot config.yml`
+
+Tadah!
+
+### What features are included in this release?
+
+- Voting and vote tracking
+- Loved, Hated, and Doublevoter properties
+- Vote bar configuration options (Bastard bars for weng-style; `open` for visible vote totals; `hidden` for no leaking.)
+
+None of the other upcoming features made it in time for Accalia's game, but I figured I'd go ahead and release. 
