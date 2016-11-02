@@ -14,5 +14,5 @@ end
 
 task :deploy do
     sh "cat script/server_id >  ~/.ssh/known_hosts" 
-    sh 'scp -rp _site travis@45.55.146.244:"/var/www/sockdrawer.io"'
+    sh 'scp -rp _site/ travis@45.55.146.244:"/var/www/sockdrawer.io"'
 end
