@@ -11,3 +11,7 @@ task :test do
     opts = { :check_html => false, :internal_domains => ['www.sockdrawer.io']}
     HTMLProofer.check_directory("./_site", opts).run
 end
+
+task :deploy do 
+   sh "scp -rp _site/* travis@45.55.146.244:#/var/www/sockdrawer.io"
+end
