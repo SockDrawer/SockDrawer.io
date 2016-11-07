@@ -1,0 +1,4 @@
+/* Show the dropdown menu on hover */
+.submenu:hover ul {
+    display: block;
+}
