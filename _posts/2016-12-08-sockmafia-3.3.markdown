@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "Sockmafia 3.3: The Postman Conspiracy"
+date:   2016-07-28 13:10:47
+permalink: /sockmafia-3.3.html
+author: Yamikuronue
+---
+
+# Sockmafia 3.3.2: The Postman Conspiracy
+
+*Note: you didn't miss anything; Sockmafia 3.2.x Signed Sealed Delivered was never released, as the functionality turned out to be based on totally bogus requirements thanks to a misunderstanding on my part.*
+
+In this version:
+
+**Chats and Postman:**
+
+  - Chats may now be started with any player if they are allowed, using the command `!chat with soAndSo`
+  - Postman Mode has been created, in which single messages can be sent through the bot to another player. This can be set to on, or open if you wish for the player to know who sent the letter.
+  - Postman-public mode has been created, which notes that a post message was sent in the main thread. This can be configured to occur at all times or only during certain phases, as it was for Whisper Mafia. 
+  - For more information on game configuration, see [the docs](http://sockmafia.readthedocs.io/en/latest/mod/#configuration-reference)
+
+**AutoGM Support**
+
+ - A plugin is under development to GM simple games. The necessary hooks for it have been incorporated into this release.
+
+**General Updates**
+  - Certain command output is now always in the main thread, such as "new-day"
+  - Multiple games can be run from the same bot at once
