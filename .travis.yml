@@ -4,7 +4,6 @@ rvm:
 branches:
   only:
   - master
-  - fix-deploy
 install:
 - bundle install
 before_script:
