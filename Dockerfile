@@ -2,7 +2,7 @@ FROM ruby:2.5-slim as builder
 RUN apt-get update \
     && apt-get install -y \ 
         build-essential \
-    && gem install \
+    && bundle install \
     && mkdir -p /var/build
     
 COPY ./ /var/build
