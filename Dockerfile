@@ -8,8 +8,7 @@ COPY ./ /var/build
 WORKDIR /var/build
 
 RUN bundle install \
-    && image_optim assets/* \
-    && jekyll build
+    && rake build
 
 
 FROM kyma/docker-nginx
