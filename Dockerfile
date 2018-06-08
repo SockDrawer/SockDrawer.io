@@ -7,7 +7,7 @@ RUN apt-get update \
     
 COPY ./ /var/build
 WORKDIR /var/build
-RUN image_optim assets/images/* && jekyll build
+RUN image_optim assets/* && jekyll build
 
 
 FROM kyma/docker-nginx
