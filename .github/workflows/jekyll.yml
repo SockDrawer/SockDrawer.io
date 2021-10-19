@@ -25,5 +25,6 @@ jobs:
         ARGS: "-e -c -r --delete"
         FOLDER: "${{ github.workspace }}/_site"
         SERVER_IP: ${{ secrets.SERVER_IP }}
+        SERVER_PORT: 22
         USERNAME: ${{ secrets.USERNAME }}
         SERVER_DESTINATION: ${{ secrets.SERVER_DESTINATION }}
