@@ -18,10 +18,10 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
-    - name: Install SSH Key
-      uses: shimataro/ssh-key-action@v2.3.1
-      with:
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+#    - name: Install SSH Key
+#      uses: shimataro/ssh-key-action@v2.3.1
+#      with:
+#        key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: deploy to server
       uses: up9cloud/action-rsync@v1.3
       env:
