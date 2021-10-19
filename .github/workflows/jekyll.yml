@@ -12,9 +12,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+     - name: Setup SSH
+      # You may pin to the exact commit or the version.
+      # uses: kielabokkie/ssh-key-and-known-hosts-action@e5c88dc608851beb90a7a78c7d5d2ef6f62f9860
+      uses: kielabokkie/ssh-key-and-known-hosts-action@v1.2.0
+      with:
+        # Private key required to access the host
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        # Hostname or IP to add to the known hosts file
+        ssh-host: ${{ secrets.SERVER_IP }}
     - uses: actions/checkout@v2
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+     - name: Upload artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: build
+        path: build
+     - name: deploy to server
+        uses: AEnterprise/rsync-deploy@v1.0
+        env:
+          DEPLOY_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: "-e -c -r --delete"
+          FOLDER: "${{ github.workspace }}/_site"
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          USERNAME: ${{ secrets.USERNAME }}
+          SERVER_DESTINATION: ${{ secrets.SERVER_DESTINATION }}
