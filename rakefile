@@ -1,13 +1,12 @@
-require 'html-proofer'
-
 task :build do
-  puts "building site"
-  sh "bundle exec jekyll build"
   puts "Compressing images... Grab a coffee"
   sh "image_optim images/* --no-pngout --no-svgo"
+  puts "building site"
+  sh "bundle exec jekyll build"
 end
 
 task :test do
+    require 'html-proofer'
     opts = { :check_html => false, :internal_domains => ['www.sockdrawer.io']}
     HTMLProofer.check_directory("./_site", opts).run
 end
