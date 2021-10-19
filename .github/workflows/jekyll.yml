@@ -27,6 +27,6 @@ jobs:
       env:
         HOST: ${{ secrets.SERVER_IP }}
         KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SOURCE: "${{ github.workspace }}/_site"
+        SOURCE: "${{ github.workspace }}/_site/*"
         TARGET: ${{ secrets.SERVER_DESTINATION }}
         USER: ${{ secrets.USERNAME }}
