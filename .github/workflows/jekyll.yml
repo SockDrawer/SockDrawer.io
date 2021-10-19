@@ -21,11 +21,11 @@ jobs:
     - name: Install SSH Key
       uses: shimataro/ssh-key-action@v2.3.1
       with:
-        key: ${{ secrets.SERVER_SSH_KEY }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: deploy to server
       uses: up9cloud/action-rsync@v1.3
       env:
         HOST: ${{ secrets.SERVER_IP }}
-        KEY: ${{ secrets.SERVER_SSH_KEY }}
+        KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         TARGET: ${{ secrets.SERVER_DESTINATION }}
         USER: ${{ secrets.USERNAME }}
