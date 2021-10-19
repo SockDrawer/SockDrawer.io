@@ -23,15 +23,11 @@ jobs:
       # uses: shimataro/ssh-key-action@3c9b0fc6f2d223b8450b02a0445f526350fc73e0
       uses: shimataro/ssh-key-action@v2.3.1
       with:
-        # SSH private key
         key: ${{ secrets.SERVER_SSH_KEY }}
     - name: deploy to server
-      uses: AEnterprise/rsync-deploy@v1.0
+      uses: up9cloud/action-rsync@1.3
       env:
-        DEPLOY_KEY: ${{ secrets.SERVER_SSH_KEY }}
-        ARGS: "-e -c -r --delete"
-        FOLDER: "${{ github.workspace }}/_site"
-        SERVER_IP: ${{ secrets.SERVER_IP }}
-        SERVER_PORT: 22
-        USERNAME: ${{ secrets.USERNAME }}
-        SERVER_DESTINATION: ${{ secrets.SERVER_DESTINATION }}
+        HOST: ${{ secrets.SERVER_IP }}
+        KEY: ${{ secrets.SERVER_SSH_KEY }}
+        TARGET: ${{ secrets.SERVER_DESTINATION }}
+        USER: ${{ secrets.USERNAME }}
